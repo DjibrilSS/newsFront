@@ -2,9 +2,9 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div>
-      <h1 className="header">cerlanash</h1>
-      <div className="header">
+    <div className="header">
+      <h1>cerlanash</h1>
+      <div>
         <input type="text" />
         <button>Search</button>
       </div>

@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+
+.newsImage {
+  width: 100%;
+}
+.news {
+  display: flex;
+  width: 20%;
+  text-align: center;
+}
+.mainpage {
+  display: flex;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.divnews {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
