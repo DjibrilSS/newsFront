@@ -5,8 +5,10 @@ import { useDispatch } from "react-redux/es/exports";
 import { useEffect } from "react";
 import { newsThunk } from "../feauters/newsSlice";
 import { commentThunk } from "../feauters/newsSlice";
+import { useState } from "react";
 
 const Newscart = () => {
+  const [open, setOped] = useState(false);
   const news = useSelector((state) => state.news.news);
   const comments = useSelector((state) => state.news.comment);
   const id = useParams();
@@ -16,7 +18,7 @@ const Newscart = () => {
   }, []);
   const handleClick = () => {
     dispatch(commentThunk());
-    console.log(comments);
+    setOped(!open);
   };
 
   return (
@@ -33,13 +35,20 @@ const Newscart = () => {
               />
               <p>{item.text}</p>
               <button onClick={() => handleClick()}>comments</button>
-              <div>
-                {comments.map((element) => {
-                  if (true) {
-                    return (<div>{element.text}<p>{element.user.login}</p></div>)
-                  }
-                })}
-              </div>
+              {open ? (
+                <div>
+                  {comments.map((element) => {
+                    if (element.news === item._id) {
+                      return (
+                        <div>
+                          {element.text}
+                          <p>{element.user.login}</p>
+                        </div>
+                      );
+                    }
+                  })}
+                </div>
+              ) : null}
             </>
           );
         }
