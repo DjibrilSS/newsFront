@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 const initialState = {
   news: [],
   category: [],
-  comments: [],
+  comment: [],
 };
 
 export const newsThunk = createAsyncThunk("news/fetch", async (_, thunkAPI) => {

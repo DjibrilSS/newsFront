@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux/es/exports";
 import { useEffect } from "react";
 import { useSelector } from "react-redux/es/exports";
 import { categoryThunk } from "../feauters/newsSlice";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   const dispatch = useDispatch();
@@ -14,7 +15,11 @@ const Sidebar = () => {
   return (
     <div>
       {category.map((item) => {
-        return <div>{item.name}</div>;
+        return (
+          <Link className="link" to={`/category/${item._id}`}>
+            <div>{item.name}</div>
+          </Link>
+        );
       })}
     </div>
   );
