@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Mainpage from "./components/Mainpage";
 import Sidebar from "./components/Sidebar";
 import Newscart from "./components/Newscart";
+import Authorization from "./components/Authorization";
 import { store } from "./app/store";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/category/:id" element={<Mainpage />} />
           <Route path="/news/:id" element={<Newscart />} />
         </Routes>
+        <Authorization />
       </div>
     </Provider>
   );

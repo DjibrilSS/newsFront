@@ -71,3 +71,6 @@
   text-decoration: none;
   color: black;
 }
+.button {
+  height: fit-content;
+}
